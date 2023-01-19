@@ -4,7 +4,6 @@ import {
   Typography,
   AppBar,
   Box,
-  CssBaseline,
   Grid,
   Toolbar,
   Container,
@@ -30,8 +29,6 @@ const Feed: Feed = ({ posts = [], comments = [] }) => {
           description="Cool description of the feed page"
         />
       </Head>
-
-      <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6">Hello To My Blog</Typography>
@@ -76,7 +73,6 @@ export default Feed;
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
-    // TODO: should be limited
     const postsResponse = await fetchJSON<Post[]>(
       `${API_ROOT}/posts?_limit=20`
     );
@@ -90,7 +86,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
     const postsIds = postsResponse.map((post) => post.id);
 
-    // TODO: should be limited
     const commentsResponse = await Promise.all(
       postsIds.map((postId) => {
         return fetchJSON<Comment[]>(`${API_ROOT}/comments?postId=${postId}`);

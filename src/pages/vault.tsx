@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSidePropsContext } from "next";
 import Head from "next/head";
-import { CssBaseline, Grid, Container } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 
 import { fetchJSON, API_ROOT, isError } from "../utils/fetchJSON";
 import type { Photo } from "../types";
@@ -22,9 +22,6 @@ const Vault: Vault = ({ photos = [] }) => {
           description="Cool description of the vault page"
         />
       </Head>
-      {/* this probably should be lift up ?? */}
-      <CssBaseline />
-
       <Container sx={{ pt: 2.5 }} maxWidth="md">
         <Grid container spacing={4}>
           {photos.map((photo) => (
