@@ -2,10 +2,10 @@ import type { NextPage, GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { CssBaseline, Grid, Container } from "@mui/material";
 
-import { fetchJSON, API_ROOT, isError } from "../src/utils/fetchJSON";
-import type { Photo } from "../src/types";
-import { MetaTags } from "../src/components/meta-tags";
-import GridCard from "../src/components/grid-card";
+import { fetchJSON, API_ROOT, isError } from "../utils/fetchJSON";
+import type { Photo } from "../types";
+import { MetaTags } from "../components/meta-tags";
+import GridCard from "../components/grid-card";
 
 type VaultProps = {
   photos: Photo[];

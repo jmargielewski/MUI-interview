@@ -10,10 +10,10 @@ import {
   Container,
 } from "@mui/material";
 
-import { fetchJSON, API_ROOT, isError } from "../src/utils/fetchJSON";
-import type { Post, Comment } from "../src/types";
-import { MetaTags } from "../src/components/meta-tags";
-import PostCard from "../src/components/post-card";
+import { fetchJSON, API_ROOT, isError } from "../utils/fetchJSON";
+import type { Post, Comment } from "../types";
+import { MetaTags } from "../components/meta-tags";
+import PostCard from "../components/post-card";
 
 type FeedProps = {
   posts: Post[];
